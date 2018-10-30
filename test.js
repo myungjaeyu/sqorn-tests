@@ -1,12 +1,14 @@
 const test = require('ava')
 
 const tests = [
-    ...require('./bin/CRUD'),
-    ...require('./bin/CHAIN_QUERIES'),
-    ...require('./bin/JOIN_QUERIES'),
-    ...require('./bin/LEFT_RIGHT_JOIN_QUERIES'),
-    ...require('./bin/INSERT_QUERIES'),
-    ...require('./bin/UPDATE_QUERIES')
-].map(e => e.query)
+    'CRUD',
+    'CHAIN_QUERIES',
+    'JOIN_QUERIES',
+    'LEFT_RIGHT_JOIN_QUERIES',
+    'INSERT_QUERIES',
+    'UPDATE_QUERIES'
+]
+.reduce((acc, cur) => acc.concat(require(`./bin/${ cur }`)), [])
+.map(e => e.query)
 
-tests.forEach((e, i) => test(`${ e.text } [${ e.args }]`, t => t.pass()))
+tests.forEach(e => test(`${ e.text } [${ e.args }]`, t => t.pass()))
