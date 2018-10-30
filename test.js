@@ -1,8 +1,8 @@
 const test = require('ava')
-const CRUD = require('./bin/CRUD')
 
 const tests = [
-    ...CRUD
-]
+    ...require('./bin/CRUD'),
+    ...require('./bin/CHAIN_QUERIES')
+].map(e => e.query)
 
 tests.forEach((e, i) => test(`${ e.text } [${ e.args }]`, t => t.pass()))

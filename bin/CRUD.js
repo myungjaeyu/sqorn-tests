@@ -9,4 +9,4 @@ module.exports = [
     user.delete({ id : 7 }),
     user.insert({ age : 7 }),
     user({ id: 3 }).set({ age : 11 })
-].map(e => e.query)
+]
