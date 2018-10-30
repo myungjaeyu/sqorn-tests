@@ -22,6 +22,9 @@
   ✔ select * from user as b join item as a on (b.item_id = a.id) []
   ✔ insert into user (name, age, team_id) values ($1, $2, $3), ($4, $5, $6), ($7, $8, $9), ($10, $11, $12) [u1bi,16,1,u2bi,17,1,u3bi,14,2,u4bi,20,2]
   ✔ insert into user (name, age, team_id) values ($1, $2, $3), ($4, default, $5), ($6, default, $7), ($8, default, $9) [u1bi,16,1,u2bi,1,u3bi,2,u4bi,2]
+  ✔ update user set age = age + 1, admin = true, name = $1 where (id = $2) [u4bi,1]
+  ✔ update user set age = $1, admin = $2, name = $3 where (id = $4) [age + 1,true,u4bi,1]
+  ✔ update user set age = $1, admin = $2, name = $3 where (id = $4) [age + 1,true,u4bi,1]
 
-  21 tests passed
+  24 tests passed
 ```
