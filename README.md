@@ -13,6 +13,7 @@
   ✔ select * from user natural join item []
   ✔ select * from user as b join item as a on (b.item_id = a.id) []
   ✔ select * from user as b join item as a on (b.item_id = a.id) and (b.name = $1) [u4bi]
+  ✔ select * from user as b join item as a on (b.item_id = a.id) and (b.name = $1) [u4bi]
 
-  12 tests passed
+  13 tests passed
 ```

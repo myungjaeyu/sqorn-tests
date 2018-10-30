@@ -8,5 +8,9 @@ module.exports = [
     sq.from({ b: 'user' })
       .join({ a: 'item'})
       .on`b.item_id = a.id`
-      .on`b.name = ${ 'u4bi' }`
+      .on`b.name = ${ 'u4bi' }`,
+    sq.from({ b: 'user' })
+      .join({ a: 'item'})
+      .on({ 'b.item_id' : sq.raw('a.id') })
+      .on({ 'b.name' : 'u4bi' })
 ]
