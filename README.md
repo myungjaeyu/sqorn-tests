@@ -14,6 +14,8 @@
   ✔ select * from user as b join item as a on (b.item_id = a.id) []
   ✔ select * from user as b join item as a on (b.item_id = a.id) and (b.name = $1) [u4bi]
   ✔ select * from user as b join item as a on (b.item_id = a.id) and (b.name = $1) [u4bi]
+  ✔ select * from user as b join item as a on (b.item_id = a.id) and (b.name = $1) [u4bi]
+  ✔ select * from user as b join item as a on (b.item_id = a.id) and (b.name = $1) or (b.admin = true) [u4bi]
 
-  13 tests passed
+  15 tests passed
 ```
